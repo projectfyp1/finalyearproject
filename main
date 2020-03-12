@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> splash | Store</title>
+        <meta name="description" content="This is the description">
+        <!-- <link rel="stylesheet" href="styles.css" /> -->
+        <!-- <script src="store.js" async></script> -->
+
+
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+         url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: helvetica;
+    color: rgb(119, 113, 113);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: rgb(253, 247, 248);
+}
+
+.nav ul {
+    margin: 10;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(104, 101, 101, 0.3)
+}
+
+.main-nav li {
+    padding: 0 5%;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, .3)
+}
+
+
+
+
+.main-header {
+    background-color: rgb(0, 0, 0);
+    background-image: url("Images/Header Background.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a > li:hover { background: #CCCCCC; }
+
+
+.dropdown-content a:hover {background-color: #e0243d;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+li.dropdown {
+  display: inline-block;
+}
+
+.third-level-menu
+{
+    position: absolute;
+    top: 0;
+    right: -150px;
+    width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.third-level-menu > li
+{
+    height: 30px;
+    background: #999999;
+}
+.third-level-menu  > li:hover { background: #CCCCCC; }
+
+
+.band-name {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white;
+}
+
+.band-name-large {
+    font-size: 8em;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+.section-header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.about-band-image {
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+/* .main-footer {
+    background-color: #56CCF2;
+    color: white;
+    padding: .25em 0;
+} */
+.footer{
+		width:100%;
+        display:block;
+		height:auto;
+        overflow: hidden;
+		margin:auto;
+		padding:70px 0px;
+        box-sizing: border-box;
+		background-color:#000;}
+
+.inner_footer{
+    display:block;
+    margin:0 auto;
+    width:1100px;
+    height:100%;
+}
+
+.inner_footer .logo_container{
+    width: 35%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.inner_footer .logo_container img{
+    width: 115px;
+    height: auto;
+}
+
+.inner_footer .footer_third{
+    width: calc(21.66666666667% - 20px);
+    margin-right: 10px;
+    float:left;
+    height: 100%;
+}
+
+.inner_footer .footer_third:last-child{
+    margin-right: 0;
+
+}
+.inner_footer .footer_third h1{
+    font-family: 'arial';
+    font-size: 22px;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inner_footer .footer_third a{
+    font-family: 'arial';
+    font-size: 18px;
+    color: white;
+    display: block;
+    font-weight: 200;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+
+/*.main-footer-container {
+    display: inline-block;
+    align-items: center;
+}
+
+.main-footer-container ul {
+   /* flex-grow: 1;*/
+  /*  text-align: end;
+}
+
+.footer-nav li {
+    padding: 0 .5em;
+}
+
+.footer-nav img {
+    width: 30px;
+    height: 30px;
+}
+*/
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-header {
+    margin: .5em 15% 2em 15%;
+    color: white;
+    border: 2px solid rgb(221, 41, 71);
+    background-color: rgba(3, 3, 3, 0.1);
+    border-radius: 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn-header:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.btn-play {
+    display: block;
+    margin: 0 auto;
+    color: rgb(219, 45, 83);
+    font-size: 4em;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    background-color: rgb(236, 64, 87);
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: rgb(209, 30, 39);
+}
+
+.tour-row {
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.tour-row:last-child {
+    border: none;
+}
+
+.tour-item {
+    display: inline-block;
+    padding-right: .5em;
+}
+
+.tour-date {
+    color: #555;
+    width: 11%;
+    font-weight: bold;
+}
+
+.tour-city {
+    width: 24%;
+}
+
+.tour-arena {
+    width: 42%;
+}
+
+.tour-btn {
+    max-width: 19%;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    height: 250px;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: #333;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+#searchbar{ 
+     margin-left: 1%; 
+     padding:6px; 
+     border-radius: 5px; 
+   } 
+ 
+   input[type=text] { 
+      width: 15%; 
+      -webkit-transition: width 0.15s ease-in-out; 
+      transition: width 0.15s ease-in-out; 
+   } 
+ 
+   /* When the input field gets focus, 
+        change its width to 100% */
+   input[type=text]:focus { 
+     width: 20%; 
+   } 
+ 
+  #list{ 
+    font-size:  1.5em; 
+    margin-left: 90px; 
+   } 
+    </style>
+
+
+    </head>
+
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+            <ul>
+            <li><a href="index.html">Splash</a></li>
+            <li class="dropdown"><a href="products.html">Products</a>
+                <div class="dropdown-content">
+                <a href="#">Eyes</a>
+                <ul class="third-level-menu">
+                    <li><a href="#">Information</a></li>
+                    <li><a href="#">Book a Meeting</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+                <a href="#">Lips</a>
+                <a href="#">Cheeks</a>
+                <a href="#">Face</a>    
+            </div>
+            </li>
+            <li><a href="blogs.html">Blogs</a></li>
+                     <!-- input tag -->
+    <input id="searchbar" onkeyup="search()" type="text"
+    name="search" placeholder="Search .."> 
+
+  
+<!-- linking javscript -->
+<script src="./animals.js"></script> 
+            <li><a href="account.html">Account</a></li>
+        
+            </ul>
+            </nav>
+            <nav class="main-nav nav">
+                <ul>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="makeupprograms.html">Makeup Programs</a></li>
+                <li><a href="makeyourown.html">Make Your Own</a></li>
+            </ul>
+            </nav>    
+            </header>
+
+        <section class="container content-section">
+            <h2 class="section-header">Eyes</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 1</span>
+                    <img class="shop-item-image" src="images/E1.jpeg">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$12.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 2</span>
+                    <img class="shop-item-image" src="images/E2.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$14.99</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 3</span>
+                    <img class="shop-item-image" src="images/E7.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$9.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 4</span>
+                    <img class="shop-item-image" src="images/E4.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$19.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 5</span>
+                    <img class="shop-item-image" src="images/E5.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$12.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 6</span>
+                    <img class="shop-item-image" src="images/E8.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$12.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        **************
+
+        <section class="container content-section">
+            <h2 class="section-header">Lips</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 7</span>
+                    <img class="shop-item-image" src="images/L1.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$12.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 8</span>
+                    <img class="shop-item-image" src="images/L2.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$14.99</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 9</span>
+                    <img class="shop-item-image" src="images/L4.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$9.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 10</span>
+                    <img class="shop-item-image" src="images/L6.png">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$19.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 11</span>
+                    <img class="shop-item-image" src="images/L8.jpg">
+                    <div class="shop-item-details">
+                    <span class="shop-item-price">$12.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 12</span>
+                    <img class="shop-item-image" src="images/L7.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$12.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 13</span>
+                    <img class="shop-item-image" src="images/L10.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$12.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Item 14</span>
+                    <img class="shop-item-image" src="images/L9.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$12.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                </div>
+
+                **************
+                
+                        <section class="container content-section">
+                            <h2 class="section-header">Face</h2>
+                            <div class="shop-items">
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 15</span>
+                                    <img class="shop-item-image" src="images/f1.jpg">
+                                    <div class="shop-item-details">
+                                    <span class="shop-item-price">$12.99</span>
+                                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 16</span>
+                                    <img class="shop-item-image" src="images/f2.jpg">
+                                    <div class="shop-item-details">
+                                    <span class="shop-item-price">$14.99</span>
+                                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 17</span>
+                                    <img class="shop-item-image" src="images/f3.jpg">
+                                    <div class="shop-item-details">
+                                    <span class="shop-item-price">$9.99</span>
+                                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 18</span>
+                                    <img class="shop-item-image" src="images/f4.jpg">
+                                    <div class="shop-item-details">
+                                    <span class="shop-item-price">$19.99</span>
+                                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 19</span>
+                                    <img class="shop-item-image" src="images/f5.jpg">
+                                    <div class="shop-item-details">
+                                    <span class="shop-item-price">$12.99</span>
+                                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 20</span>
+                                    <img class="shop-item-image" src="images/f6.jpg">
+                                    <div class="shop-item-details">
+                                        <span class="shop-item-price">$12.99</span>
+                                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                    </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 21</span>
+                                    <img class="shop-item-image" src="images/f7.jpg">
+                                    <div class="shop-item-details">
+                                        <span class="shop-item-price">$12.99</span>
+                                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+                                <div class="shop-item">
+                                    <span class="shop-item-title">Item 22</span>
+                                    <img class="shop-item-image" src="images/f8.jpg">
+                                    <div class="shop-item-details">
+                                        <span class="shop-item-price">$12.99</span>
+                                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                </div>
+                                </div>
+            </div>
+        </section>
+        <!-- <section class="container content-section">
+            <h2 class="section-header">MERCH</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">T-Shirt</span>
+                    <img class="shop-item-image" src="s5.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$19.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Coffee Cup</span>
+                    <img class="shop-item-image" src="s6.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$6.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+        <!-- <footer class="main-footer">
+            <div class="container main-footer-container">
+                <h3 class="band-name">The Generics</h3>
+                <ul class="nav footer-nav">
+                    <li>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="Images/YouTube Logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.spotify.com" target="_blank">
+                            <img src="Images/Spotify Logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="Images/Facebook Logo.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer> -->
+
+
+        <!--Footer-->
+<!--<div class="main-footer">
+    <div class="container">
+    <div class=" footer-top">
+    <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+    <div class="footer-text">
+    <h3>ABOUT US          CUSTOMER SERVICE          FAQs</h3>
+    <ul>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Sell on EasyShop.pk</a></li>
+    
+    </ul>
+    
+    
+    </div>
+    
+    
+    </div><!--End Of C0l-->
+    
+   <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+    <div class="footer-text">
+    <h3>GET KNOW US</h3>
+    <ul>
+    <li><a href="#">About us</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">careers</a></li>
+    
+    
+    </ul>
+    
+    
+    </div>
+    
+    
+    </div><!--End Of C0l-->
+    
+<!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+    <div class="footer-text">
+    <h3>SHOPPING GUIDE</h3>
+    <ul>
+    <li><a href="#">How to shop Modesty.pk</a></li>
+    <li><a href="#">Terms and condition</a></li>
+    <li><a href="#">privicy & Agriment</a></li>
+    
+    
+    
+    </ul>
+    
+    
+    </div>
+    
+    
+    </div><!--End Of C0l-->
+   <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+    <div class="footer-text">
+    <h3>FOLLOW US</h3>
+    <ul>
+    <abbr title="Facebook"><li><a href="#"><i class="fa fa-facebook"></i></a></a></li></abbr>
+    <abbr title="Twitter"><li><a href="#"><i class="fa fa-twitter"></i></a></li></abbr>
+    <abbr title="Instagram"><li><a href="#"><i class="fa fa-instagram"></i></a></li></abbr>
+    
+    
+    </ul>
+    
+    
+    </div>
+    
+    
+    </div><!--End Of C0l-->
+    
+    
+  <!--  </div><!--End Of row-->
+    
+    
+   <!-- </div><!--End Of row-->
+    
+    <!--</div><!--End Of row-->
+    
+   <!-- </div><!--End Of row-->
+    
+    <!--</div><!--End of top-->
+    <!--</div><!--End of Container-->
+    <!--</div><!--End main footre-->
+
+    <div class="footer">
+        <div class="inner_footer">
+        <div class="logo_container">
+            <img src="logo.png">
+        </div> 
+
+        <div class="footer_third">
+            <h1>About Us</h1>
+            <a href="#">Terms &amp; conditions</a>
+            <a href="#"> Privacy Policy</a>
+
+        </div>
+
+        <div class="footer_third">
+                <h1>Customer Service</h1>
+                <a href="#">Terms &amp; conditions</a>
+                <a href="#"> Privacy Policy</a>
+    
+        </div>
+
+        <div class="footer_third">
+                    <h1>FAQs</h1>
+                    <a href="#">Terms &amp; conditions</a>
+                    <a href="#"> Privacy Policy</a>
+        
+        </div>    
+        
+
+
+        </div>
+
+    </div>
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+
+function ready() {
+    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
+    }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+
+function purchaseClicked() {
+    alert('Thank you for your purchase')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)
+    }
+    updateCartTotal()
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+}
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
+}
+
+function addToCartClicked(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    addItemToCart(title, price, imageSrc)
+    updateCartTotal()
+}
+
+function addItemToCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+            alert('This item is already added to the cart')
+            return
+        }
+    }
+    let product = {
+        title,
+        price,
+        imageSrc
+    }
+    localStorage.setItem("cart", JSON.stringify(product))
+    var cartRowContents = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+    </script>
+
+</html>
